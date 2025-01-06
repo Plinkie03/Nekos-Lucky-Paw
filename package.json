@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "tsc && node . --dev",
     "prod": "tsc && node . --prod",
+    "release": "npx commit-and-tag-version",
     "test": "tsc && node dist/__tests__/runner",
     "db": "npx prisma generate && npx prisma format && npx prisma db push"
   },
@@ -14,6 +15,7 @@
   "description": "",
   "devDependencies": {
     "@types/node": "^22.10.5",
+    "commit-and-tag-version": "^12.5.0",
     "typescript": "^5.7.2"
   },
   "dependencies": {

@@ -1,0 +1,25 @@
+{
+  "name": "neko's-lucky-paw",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsc && node . --dev",
+    "prod": "tsc && node . --prod",
+    "test": "tsc && node dist/__tests__/runner",
+    "db": "npx prisma generate && npx prisma format && npx prisma db push"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^22.10.5",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.1.0",
+    "discord.js": "^14.17.2",
+    "prisma": "^6.1.0",
+    "tiny-typed-emitter": "^2.1.0"
+  }
+}

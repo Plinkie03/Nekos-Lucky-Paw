@@ -21,6 +21,7 @@
   "dependencies": {
     "@prisma/client": "^6.1.0",
     "discord.js": "^14.17.2",
+    "dotenv": "^16.4.7",
     "prisma": "^6.1.0",
     "tiny-typed-emitter": "^2.1.0"
   }

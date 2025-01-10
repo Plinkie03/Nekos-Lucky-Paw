@@ -9,6 +9,7 @@
     "test": "tsc && node dist/__tests__/runner",
     "db": "npx prisma generate && npx prisma format && npx prisma db push"
   },
+  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",

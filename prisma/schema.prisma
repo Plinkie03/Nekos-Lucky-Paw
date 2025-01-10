@@ -9,6 +9,41 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "sqlite"
   url      = env("DATABASE_URL")
+}
+
+model RawGiveaway {
+  uuid      String   @id @unique @default(uuid())
+  userId    String
+  endsAt    DateTime
+  channelId String
+  messageId String
+  prize     String
+  color     Int?
+  thumbnail String?
+  image     String?
+  any       Boolean  @default(false)
+
+  participants RawParticipant[]
+  requirements RawRequirement[]
+}
+
+model RawRequirement {
+  giveawayId String
+  id         Int
+  settings   Bytes
+
+  giveaway RawGiveaway @relation(fields: [giveawayId], references: [uuid], onUpdate: Cascade, onDelete: Cascade)
+
+  @@id([giveawayId, id])
+}
+
+model RawParticipant {
+  giveawayId String
+  userId     String
+
+  giveaway RawGiveaway @relation(fields: [giveawayId], references: [uuid], onDelete: Cascade, onUpdate: Cascade)
+
+  @@id([giveawayId, userId])
 }
